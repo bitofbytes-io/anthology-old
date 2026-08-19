@@ -1,5 +1,11 @@
+import { createRequire } from "node:module";
 import { defineConfig, loadEnv, transformWithOxc } from "vite";
+import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
+
+const require = createRequire(import.meta.url);
+const productionBrowserTargets = require("./package.json").browserslist
+  .production;
 
 const serializeEnvValue = value =>
   value === undefined ? "undefined" : JSON.stringify(value);
@@ -45,6 +51,9 @@ export default defineConfig(({ command, mode }) => {
       react({
         include: /\.[jt]sx?$/,
         jsxRuntime: "classic"
+      }),
+      legacy({
+        targets: productionBrowserTargets
       })
     ],
     define: environmentDefines,

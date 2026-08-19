@@ -20,18 +20,20 @@ for production build.
 2. Modify .env.development for 'json-server' URL location (for development build)
 3. Modify .env.production for your GitHub JSON data location (for production build)
 4. Create a .env.local file that includes your own Google Books API key:  ```REACT_APP_API_KEY=<Your key here>```
-5. Install NPM Packages using ```npm install```
+5. Install the locked NPM packages using ```npm ci```
 6. If running development, start json-server.  Ex.  ```json-server db.json --port 5000```
 7. Run with ```npm start```
+8. Create and preview a production build with ```npm run build``` and ```npm run preview```
 
 ## Prerequisites
-1. To run as a development build, it requires an instance of 
+1. Node.js ```^20.19.0``` or ```>=22.12.0``` and NPM.
+2. To run as a development build, it requires an instance of
 the NPM package *json-server* to serve book data.  
-2. To run as a production build, it 
+3. To run as a production build, it
 requires a public GitHb repository with the books JSON data
 available.
 See setup at [MY JSON Server](https://my-json-server.typicode.com/).
-3. A valid Google Books API key.  See [Google Books API](https://developers.google.com/books)
+4. A valid Google Books API key.  See [Google Books API](https://developers.google.com/books)
 
 ## Built With
 [React](https://reactjs.org/)
