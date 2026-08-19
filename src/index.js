@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import Anthology from "./containers/Anthology/Anthology";
 
+import "normalize.css";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
